@@ -10,9 +10,10 @@ const todoRoutes = express.Router();
 
 app.use(cors);
 app.use(bodyParser.json());
-app.use('./todos', todoRoutes);
+app.use('/todos', todoRoutes);
 
-mongoose.connect('mongodb://127.0.0.1:27017/todos', {
+const databaseAddress = 'mongodb://127.0.0.1:27017/todos';
+mongoose.connect(databaseAddress, {
     useNewUrlParser:true });
 
 const connection = mongoose.connection;

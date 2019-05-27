@@ -1,8 +1,6 @@
 import mongoose from 'mongoose';
 
-const Schema = mongoose.Schema;
-
-export const Todo = new Schema({
+export const Todo = new mongoose.Schema({
     description: {
         type: String
     },

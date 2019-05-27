@@ -1,0 +1,11 @@
+running "killall -s KILL node" will terminate any node processes currently running, like nodemon
+
+starting and stopping mongodb on linux is:
+    "sudo service mongod start"
+    "sudo service mongod stop"
+    "sudo service mongod restart"
+and opening a mongo terminal is simply "mongo" in the terminal
+
+TODO:
+    learn more about how express works, and more specifically how routers work
+    how does the "once" function work?
