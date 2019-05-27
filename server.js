@@ -35,9 +35,10 @@ todoRoutes.route('/').get((req, res) => {
 
 todoRoutes.route('/:id').get((req, res) => {
     const id = req.params.id;
-    Todo.findById(id, (err, todo) => {
-        res.json(todo);
-    }); // TODO: why no error handling?
+    Todo.findById(
+        id, 
+        (err, todo) => {res.json(todo);}
+        ); // TODO: why no error handling?
 });
 
 todoRoutes.route('/add').post((req, res) => {
@@ -55,7 +56,7 @@ todoRoutes.route('/update/:id').post((req, res) => {
         if (!todo) {
             res.status(404).send('data is not found');
         }
-        else {
+        else { // way to simplify this syntax with more modern JS syntax?
             todo.description = req.body.description;
             todo.responsible = req.body.description;
             todo.priority = req.body.priority;
