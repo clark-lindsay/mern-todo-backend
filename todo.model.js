@@ -1,6 +1,7 @@
 import mongoose from 'mongoose';
+const Schema = mongoose.Schema;
 
-export const Todo = new mongoose.Schema({
+let Todo = new Schema({
     description: {
         type: String
     },
@@ -8,9 +9,11 @@ export const Todo = new mongoose.Schema({
         type: String
     },
     priority: {
-        type: Number
+        type: String
     },
     completed: {
         type: Boolean
     }
 });
+
+module.exports = mongoose.model('Todo', Todo);
