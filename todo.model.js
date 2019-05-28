@@ -9,7 +9,7 @@ let Todo = new Schema({
         type: String
     },
     priority: {
-        type: String
+        type: Number
     },
     completed: {
         type: Boolean
