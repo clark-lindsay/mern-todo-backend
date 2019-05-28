@@ -10,7 +10,6 @@ const todoRoutes = express.Router();
 
 app.use(cors);
 app.use(bodyParser.json());
-app.use('/todos', todoRoutes);
 
 const databaseAddress = 'mongodb://127.0.0.1:27017/todos';
 mongoose.connect(databaseAddress, {
@@ -72,6 +71,8 @@ todoRoutes.route('/update/:id').post((req, res) => {
     });
 });
 
+
+app.use('/todos', todoRoutes);
 app.listen(PORT, () => {
     console.log(`Server is running on port: ${PORT}`);
 })
